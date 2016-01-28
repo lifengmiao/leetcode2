@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug 17 16:27:33 2015
+
+@author: lifeng
+"""
+
+class Solution:
+    # @param {integer[]} nums
+    # @return {boolean}
+    def containsDuplicate(self, nums):
+        dic = dict()
+        for i in range(len(nums)):
+            if dic.get(nums[i])>0:
+                return True
+            else:
+                dic[nums[i]] = 1
+        return False
+
+# Test
+list = [2,2,3,9,5,6,7]
+sol = Solution()
+print sol.containsDuplicate(list)
